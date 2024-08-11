@@ -2,15 +2,6 @@
 
 pipeline {
     agent none
- 
-    tools {
-        maven 'Maven_3.9.8' // This is the name of the Maven installation configured in Jenkins
-        jdk 'JDK_21' // This is the name of the JDK installation configured in Jenkins
-    }
-
-    environment {
-        MAVEN_OPTS = '-Xmx1024m'
-    }
     stages {
         stage('compile') {
             steps {
