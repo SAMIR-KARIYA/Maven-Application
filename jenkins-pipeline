@@ -13,11 +13,35 @@ pipeline {
                 }
             }
         }
+        stage('validate Maven Project') {
+            steps {
+                script {
+                    // Run the Maven validate command using Windows batch script
+                    bat 'mvn validate'
+                }
+            }
+        }
         stage('Compile Maven Project') {
             steps {
                 script {
                     // Run the Maven compile command using Windows batch script
                     bat 'mvn compile'
+                }
+            }
+        }
+        stage('Test Maven Project') {
+            steps {
+                script {
+                    // Run the Maven test command using Windows batch script
+                    bat 'mvn test'
+                }
+            }
+        }
+        stage('Package Maven Project') {
+            steps {
+                script {
+                    // Run the Maven package command using Windows batch script
+                    bat 'mvn package'
                 }
             }
         }
