@@ -13,6 +13,13 @@ pipeline {
                 }
             }
         }
+        stage('Compile Maven Project') {
+            steps {
+                script {
+                    // Run the Maven compile command using Windows batch script
+                    bat 'mvn compile'
+                }
+            }
+        }
     }
 }
-
