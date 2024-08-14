@@ -5,8 +5,8 @@ pipeline {
         stage('Check Maven Version') {
             steps {
                 script {
-                    // Run the Maven version command
-                    def mvnVersion = sh(script: 'mvn --version', returnStdout: true).trim()
+                    // Run the Maven version command using Windows batch script
+                    def mvnVersion = bat(script: 'mvn --version', returnStdout: true).trim()
 
                     // Print the result
                     echo "Maven Version:\n${mvnVersion}"
@@ -15,3 +15,4 @@ pipeline {
         }
     }
 }
+
