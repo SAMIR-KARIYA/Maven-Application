@@ -1,33 +1,15 @@
-#!/usr/bin/env groovy
-
 pipeline {
-    agent none
+    agent any
+
     stages {
-        stage('compile') {
+        stage('Check Maven Version') {
             steps {
                 script {
-                   echo "Compiling the application...."
-                }
-            }
-        }
-        stage('build') {
-            steps {
-                script {
-                    echo "Building the application..."
-                }
-            }
-        }
-        stage('test') {
-            steps {
-                script {
-                    echo "Testing the application..."
-                }
-            }
-        }
-        stage('deploy') {
-            steps {
-                script {
-                    echo "Deploying the application..."
+                    // Run the Maven version command
+                    def mvnVersion = sh(script: 'mvn --version', returnStdout: true).trim()
+
+                    // Print the result
+                    echo "Maven Version:\n${mvnVersion}"
                 }
             }
         }
