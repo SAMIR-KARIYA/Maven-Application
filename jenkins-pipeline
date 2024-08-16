@@ -6,8 +6,8 @@ pipeline {
             steps {
                 script {
                     // Run the Maven version command using Windows batch script
-                    def mvnVersion = bat(script: 'mvn --version', returnStdout: true).trim()
-
+                    //def mvnVersion = bat(script: 'mvn --version', returnStdout: true).trim()
+                    bat 'mvn --version'
                     // Print the result
                     echo "Maven Version:\n${mvnVersion}"
                 }
