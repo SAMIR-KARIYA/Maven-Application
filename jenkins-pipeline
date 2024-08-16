@@ -10,7 +10,7 @@ pipeline {
                     //def mvnVersion = bat(script: 'mvn --version', returnStdout: true).trim()
                     bat 'mvn --version'
                     // Print the result
-                    echo "Maven Version:\n${mvnVersion}"
+                    //echo "Maven Version:\n${mvnVersion}"
                 }
             }
         }
