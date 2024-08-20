@@ -1,24 +1,10 @@
 #!/usr/bin/env groovy
 pipeline {
     agent any
-
     stages {
-        stage('Check Maven Version') {
-            steps {
-                script {
-                    // Run the Maven version command using Windows batch script
-                    //def mvnVersion = bat(script: 'mvn --version', returnStdout: true).trim()
-                    bat 'mvn --version'
-                    // Print the result
-                    echo 'maven version checked successullyyyyyyyyyyyyyyyyyyyy'
-                    //echo "Maven Version:\n${mvnVersion}"
-                }
-            }
-        }
         stage('validate Maven Project') {
             steps {
                 script {
-                    // Run the Maven validate command using Windows batch script
                     bat 'mvn validate'
                 }
             }
@@ -26,7 +12,6 @@ pipeline {
         stage('Compile Maven Project') {
             steps {
                 script {
-                    // Run the Maven compile command using Windows batch script
                     bat 'mvn compile'
                 }
             }
@@ -34,7 +19,6 @@ pipeline {
         stage('Test Maven Project') {
             steps {
                 script {
-                    // Run the Maven test command using Windows batch script
                     bat 'mvn test'
                 }
             }
@@ -42,7 +26,6 @@ pipeline {
         stage('Package Maven Project') {
             steps {
                 script {
-                    // Run the Maven package command using Windows batch script
                     bat 'mvn package'
                 }
             }
