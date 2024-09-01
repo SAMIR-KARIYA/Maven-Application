@@ -30,5 +30,19 @@ pipeline {
                 }
             }
         }
+        stage('Install Maven Project') {
+            steps {
+                script {
+                    bat 'mvn install'
+                }
+            }
+        }
+        stage('Deployment Maven Project') {
+            steps {
+                script {
+                    bat 'mvn deploy'
+                }
+            }
+        }
     }
 }
