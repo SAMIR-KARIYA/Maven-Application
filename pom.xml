@@ -33,15 +33,7 @@
         <name>Releases Repository</name>
         <url>file:///C:/xampp/htdocs</url>
     </repository>
-    <!-- <snapshotRepository>
-        <id>snapshots</id>
-        <name>Snapshots Repository</name>
-        <url>https://repository.example.com/snapshots</url>
-    </snapshotRepository> -->
 </distributionManagement>
-
-
-
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
