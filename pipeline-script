@@ -1,34 +1,28 @@
 #!/usr/bin/env groovy
 pipeline {
-    agent none
+    agent any
     stages {
         stage('compile') {
             steps {
                 script {
-                   echo "Compiling the application...."
-                }
-            }
-        }
-        stage('build') {
-            steps {
-                script {
-                    echo "Building the application..."
+                   bat 'mvn compile'
                 }
             }
         }
         stage('test') {
             steps {
                 script {
-                    echo "Testing the application..."
+                    bat 'mvn test'
                 }
             }
         }
-        stage('deploy') {
+        stage('package') {
             steps {
                 script {
-                    echo "Deploying the application..."
+                    bat 'mvn package'
                 }
             }
         }
+        
     }
 }
